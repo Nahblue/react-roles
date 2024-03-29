@@ -1,8 +1,24 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# App Next.js with TanStack Query
+
+This is a Next.js application that uses popular libraries such as Axios, Zod, TanStack Query, React Hook Form, Lucid React and React Toastify to create an application with two screens: a dashboard screen and a roles screen where it is possible to list, create, search, edit and delete roles using an API.
+
+## Requiriments
+
+- Node.js
+- npm ou Yarn
+
+## Installation
+
+```bash
+git clone https://github.com/Nahblue/react-roles
+cd react-roles
+
+npm install
+# ou
+yarn install
+```
 
 ## Getting Started
-
-First, run the development server:
 
 ```bash
 npm run dev
@@ -10,27 +26,31 @@ npm run dev
 yarn dev
 # or
 pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Acess the app at `http://localhost:3000`.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+#Functionalities
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Dashboard:
+The dashboard is a decorative page that can be customized according to project needs.
 
-## Learn More
+Roles:
+On the roles screen, you will find the following features:
+-Roles list: Displays all roles in the API.
+-Role creation: allows you to add a new role.
+-Role Search: Searches for roles based on specific criteria.
+-Role editing: allows you to modify the information of an existing role.
+-Role Deletion: Remove a role from the list.
 
-To learn more about Next.js, take a look at the following resources:
+#Technologies
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+-Next.js
+-Axios
+-Zod
+-TanStack Query
+-React Hook Form
+-Lucid React
+-React Toastify
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Made with ♥ by Nahblue 😋
