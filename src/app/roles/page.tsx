@@ -1,6 +1,6 @@
 'use client'
 
-import { Check, Pencil, Search, X } from "lucide-react";
+import { Check, Pencil, X } from "lucide-react";
 import { useGetRoles } from "@/services/queries";
 import { CreateRoleForm } from "@/components/CreateRoleForm";
 import { useEffect, useState } from "react";
@@ -10,6 +10,8 @@ import { RolesSchema } from "@/types/rolesSchema";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { CreateRole, createRoleSchema } from "@/types/createRoleSchema";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 
 export default function Roles() {
@@ -37,6 +39,16 @@ export default function Roles() {
   const handleDeleteRole = (data: RoleIdSchema) => {
     console.log(data)
     deleteRoleMutation.mutate(data)
+    toast.success("Cargo deletado com sucesso!", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    })
   }
 
   const handleOpenModal = (data :RolesSchema) => {
@@ -56,6 +68,16 @@ export default function Roles() {
    
     reset()
     setModalIsOpen(false)
+    toast.success("Cargo modificado com sucesso!", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    })
   }
   
 
@@ -72,7 +94,7 @@ export default function Roles() {
     <main className="max-w-2xl max-h-[720px] mx-auto flex flex-col gap-4 pt-6">
       <h1 className='font-bold text-2xl'>Cargos</h1>
 
-      <div className='flex justify-between items-end gap-6'>
+      <div className='flex justify-between items-start gap-6'>
         <CreateRoleForm />
         
         <div className="flex gap-2">
@@ -111,9 +133,9 @@ export default function Roles() {
                     </button>
                   </div>
                 </li>
-                
               )
           })}
+          
           {modalIsOpen &&
             <div className="bg-zinc-800 bg-opacity-60 fixed top-0 left-0 z-50 w-screen h-screen flex">
               <div className="m-auto p-12 bg-slate-100 rounded-md">
@@ -146,6 +168,18 @@ export default function Roles() {
             </div>
           }
         </ul>
+        <ToastContainer 
+            position="top-right"
+            autoClose={5000}
+            hideProgressBar={false}
+            newestOnTop={true}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="light"
+          />
       </div>
 
     </main>

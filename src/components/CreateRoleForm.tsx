@@ -5,6 +5,7 @@ import { SubmitHandler, useForm } from 'react-hook-form';
 import { Plus } from "lucide-react";
 import { useCreateRole } from "@/services/mutations";
 import { CreateRole, createRoleSchema } from "@/types/createRoleSchema";
+import { ToastContainer, toast } from "react-toastify";
 
 
 
@@ -24,10 +25,21 @@ export function CreateRoleForm() {
     createRoleMutation.mutate(data)
    
     reset()
+    toast.success("Cargo criado com sucesso!", {
+      position: "top-right",
+      autoClose: 2000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: false,
+      draggable: true,
+      progress: undefined,
+      theme: "light",
+    })
   }
+  
 
   return(
-    <div className="flex flex-col gap-2">
+    <div>
       <form onSubmit={handleSubmit(handleCreateSubmit)} className='flex'>
         <input 
           {...register('description')}
@@ -43,11 +55,19 @@ export function CreateRoleForm() {
           Criar
           <Plus />
         </button>
-        </form>
-
-      {/* {errors.description && 
-        <span className="text-red-700">{errors.description.message}</span>
-      } */}
+      </form>
+      <ToastContainer 
+          position="top-right"
+          autoClose={5000}
+          hideProgressBar={false}
+          newestOnTop={false}
+          closeOnClick
+          rtl={false}
+          pauseOnFocusLoss
+          draggable
+          pauseOnHover
+          theme="light"
+        />
     </div>
   )
 }
