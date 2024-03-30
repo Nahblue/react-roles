@@ -37,20 +37,20 @@ The dashboard is a decorative page that can be customized according to project n
 
 Roles:
 On the roles screen, you will find the following features:
--Roles list: Displays all roles in the API.
--Role creation: allows you to add a new role.
--Role Search: Searches for roles based on specific criteria.
--Role editing: allows you to modify the information of an existing role.
--Role Deletion: Remove a role from the list.
+- Roles list: Displays all roles in the API.
+- Role creation: allows you to add a new role.
+- Role Search: Searches for roles based on specific criteria.
+- Role editing: allows you to modify the information of an existing role.
+- Role Deletion: Remove a role from the list.
 
 #Technologies
 
--Next.js
--Axios
--Zod
--TanStack Query
--React Hook Form
--Lucid React
--React Toastify
+- Next.js
+- Axios
+- Zod
+- TanStack Query
+- React Hook Form
+- Lucid React
+- React Toastify
 
 Made with ♥ by Nahblue 😋
